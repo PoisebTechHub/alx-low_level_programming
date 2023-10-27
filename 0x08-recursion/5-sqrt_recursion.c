@@ -1,28 +1,29 @@
 #include "main.h"
 /**
- * _sqrt_recursion - returns the natural square root of number
- *@n: number of square root to calculate
- *Return: resulting square root
+ * perfect_sqrt - return the natural square root of a number
+ * @y: input number
+ * @z: square number
+ * @k: iterator
+ * Return: number if square root, if not -1
+ */
+int perfect_sqrt(int y, int z)
+{
+if (y * y == z)
+{
+return (y);
+}
+else if (y * y > z)
+{
+return (-1);
+}
+return (perfect_sqrt(z, y + 1));
+}
+/**
+ * _sqrt_recursion - returns natural square root of a number
+ * @n: input number
+ * Retrun: number is square root, if not -1
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-	return (-1);
-	return (_sqrt_recursion(n, 0));
-}
-
-/**
- * actual_sqrt_recursion - recurses to find the natural
- * square root of a number
- * @n: number of sqaure root to be calculated
- * @i: iterator
- * Return: output square root
- */
-int actual_sqrt_recursion(int n, int i)
-{
-	if (i * i > n)
-	return (-1);
-	if (i * i == n)
-	return (i);
-	return (actual_sqrt_recursion(n, i + 1));
+return (perfect_sqrt(0, n));}
 }

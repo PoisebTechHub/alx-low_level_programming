@@ -13,7 +13,7 @@ return (actual_prime(n, n - 1));
 }
 
 /**
- * actual_prime - calculates if a number is prime
+ * actual_prime - indicates that an integer is a prime number and calculates
  * @n: number to be calculated
  * @i: iterator
  * Return: if n is prime number 1, if not 0
