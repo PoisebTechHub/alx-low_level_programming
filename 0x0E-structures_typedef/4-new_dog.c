@@ -10,7 +10,7 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	size_t n, a, o;
+	size_t n, o, i;
 	dog_t *dog;
 
 	if (name == NULL || owner == NULL)
@@ -28,10 +28,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dog->name == NULL)
 	{
 		free(dog->name);
+		free(dog);
 		return (NULL);
 	}
-	for (a = 0; a < n; a++)
-		dog->name[a] = name[a];
+	for (i = 0; i < n; i++)
+		dog->name[i] = name[i];
 	dog->age = age;
 	for (o = 0; owner[o] != '\0'; o++)
 		;
@@ -43,7 +44,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(dog);
 		return (NULL);
 	}
-	for (a = 0; a < o; a++)
-		dog->owner[a] = owner[a];
+	for (i = 0; i < o; i++)
+		dog->owner[i] = owner[i];
 	return (dog);
 }
