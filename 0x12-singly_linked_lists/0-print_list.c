@@ -4,21 +4,21 @@
 
 /**
  * print_list - a function that prints all elements in a linked list
- * @p: pointer to the list_t
+ * @h: pointer to the list_t
  * Return: number of nodes printed
  */
 
-size_t print_list(const list_t *p)
+size_t print_list(const list_t *h)
 {
 	size_t nodes = 0;
 
-	while (p)
+	while (h)
 	{
-		if (!p->str)
+		if (!h->str)
 			printf("[0] (nil)\n");
 		else
-			printf("[%u] %s\n", p->len, p->str);
-		p = p->next;
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
 		nodes++;
 	}
 
