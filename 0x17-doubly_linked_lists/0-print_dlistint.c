@@ -1,6 +1,8 @@
 #include "lists.h"
 #include <stddef.h>
 
+/* Write a function that prints all the elements of a list */
+
 /**
  * print_dlistint - Function that prints all the elements
  * @h: One linked list of a type dlistint_t to print

@@ -1,5 +1,8 @@
 #include "lists.h"
 #include <stddef.h>
+
+/* Write a function that returns the number of elements in a list */
+
 /**
  *  dlistint_len -function that returns the number of elements
  *  in a doubly linked list

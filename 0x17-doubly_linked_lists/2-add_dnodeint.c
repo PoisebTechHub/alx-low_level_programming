@@ -2,8 +2,10 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+/* Write a function that adds a new node at the beginning of list */
+
 /**
- *  add_dnodeint - function that adds a new node
+ *  add_dnodeint - function that adds a new node to the list
  *  at the beginning of a doubly linked list
  *  @head: pointer to the first node in the list
  *  @n: represents data to be inserted in the new node

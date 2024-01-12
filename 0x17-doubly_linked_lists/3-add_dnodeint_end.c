@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stddef.h>
 
+/* Write a function that adds a new node at the end of a dlistint_t list */
+
 /**
  * add_dnodeint_end - Function that adds a node
  * at the end of doubly linked list
