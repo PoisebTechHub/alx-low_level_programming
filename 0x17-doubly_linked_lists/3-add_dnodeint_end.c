@@ -3,7 +3,8 @@
 #include <stddef.h>
 
 /**
- * add_dnodeint_end - Function that adds a node at the end of doubly linked list
+ * add_dnodeint_end - Function that adds a node
+ * at the end of doubly linked list
  * @head: pointer to the first element in the list
  * @n: data to be inserted in the new node
  * Return: if successful, return pointer to the new node, otherwise NULL
