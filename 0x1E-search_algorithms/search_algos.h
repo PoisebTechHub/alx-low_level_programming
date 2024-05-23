@@ -7,7 +7,7 @@
 
 /**
  *
- * @n: This indicates an Integer
+ * @n: Integer
  * @index: Index of the node in the list
  * @next: Pointer to the next node
  *
@@ -23,7 +23,7 @@ typedef struct listint_s
 /**
  * struct skiplist_s - a function of singly linked list with an express lane
  *
- * @n: This indicates the integer
+ * @n: Integer
  * @index: Index of the node in the list
  * @next: Pointer to the next node
  * @express: Pointer to the next node in the express lane
