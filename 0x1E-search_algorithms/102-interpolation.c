@@ -1,43 +1,42 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - function that searches for a value in a sorted array
- * of integers using the Interpolation search algorithm.
- *
- * @array: Array is a pointer to the first element of the array to search in
- * @size: Number of elements in array
- * @value: Value to search for in the array
- *
- * Return: The first index where value is located
- * or -1 if value is not found or if array is NULL
- */
+  * interpolation_search - a function that search for a value in a sorted array
+  * 			of integers using interpolation search.
+  * @array: Serves as a pointer to the first element of the array to search.
+  * @size: Number of elements contained in the array.
+  * @value: This serves as the value to search for.
+  *
+  * Return: the first index where the value is located.
+  *	If the value is not present or the array is NULL, -1.
+  *
+  * Description: Prints a value every time it is compared in the array..
+  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t low = 0;
-	size_t high = size - 1;
-	size_t pos = 0;
+	size_t k, l, r;
 
-	if (array != NULL)
+	if (array == NULL)
+		return (-1);
+
+	for (l = 0, r = size - 1; r >= l;)
 	{
-		while ((array[high] != array[low]) &&
-		       (value >= array[low]) &&
-		       (value <= array[high]))
+		k = l + (((double)(r - l) / (array[r] - array[l])) * (value - array[l]));
+		if (k < size)
+			printf("Value checked array[%ld] = [%d]\n", k, array[k]);
+		else
 		{
-			pos = low + (((double)(high - low) / (array[high] - array[low])) *
-				     (value - array[low]));
-			printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
-			if (array[pos] < value)
-				low = pos + 1;
-			else if (value < array[pos])
-				high = pos - 1;
-			else
-				return (pos);
+			printf("Value checked array[%ld] is out of range\n", k);
+			break;
 		}
-		if (value == array[low])
-			return (low);
-		pos = low + (((double)(high - low) / (array[high] - array[low]))
-			     * (value - array[low]));
-		printf("Value checked array[%lu] is out of range\n", pos);
+
+		if (array[k] == value)
+			return (k);
+		if (array[k] > value)
+			r = k - 1;
+		else
+			l = k + 1;
 	}
+
 	return (-1);
 }
